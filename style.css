@@ -258,8 +258,12 @@ footer .social-media img {
     display: inline;
 }
 
-.social-media-link:hover {
+.social-media svg:hover {
     cursor: pointer;
+}
+
+.social-media svg:hover path {
+    fill: var(--clr-orange);
 }
 
 @media(min-width:40rem) {
