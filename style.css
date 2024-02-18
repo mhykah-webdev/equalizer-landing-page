@@ -79,6 +79,9 @@ html {
     font-family: "IBM Plex Sans", sans-serif;
 }
 
+body {
+    display: grid;
+}
 
 .hero {
     padding-bottom: 10rem;
@@ -87,7 +90,7 @@ html {
     background-image: url(assets/bg-main-mobile.png);
 }
 
-.hero img {
+.hero .logo {
     margin-bottom: 4rem;
 }
 
@@ -113,6 +116,7 @@ html {
 .demo {
     background-color: var(--clr-black);
     background-image: url(assets/bg-pattern-2.svg);
+    background-size: 17.5rem auto;
     background-repeat: no-repeat;
     background-position: center;
     background-position: top;
@@ -185,6 +189,10 @@ section .price p {
     padding: 0.875rem;
 }
 
+.button:hover {
+    cursor: pointer;
+}
+
 .button img {
     display: inline;
     width: 1rem;
@@ -196,6 +204,10 @@ section .price p {
     color: var(--clr-white);
 }
 
+.button-ios:hover {
+    background-color: aqua;
+}
+
 .button-ios img {
     transform: translate(0px, 1.5px);
 }
@@ -205,12 +217,17 @@ section .price p {
     color: var(--clr-black);
 }
 
+.button-android:hover {
+    background-color: var(--clr-yellow);
+}
+
 .button-android img {
     transform: translate(0px, 3px);
 }
 
 footer {
     padding: 4rem 1.5rem 5rem 1.5rem;
+    display: grid;
 }
 
 footer .logo {
@@ -232,9 +249,39 @@ footer .social-media {
     gap: 1.25rem;
 }
 
-/* @media(min-width:600px) {
+footer .social-media img {
+    width: 20px;
+    height: 20px;
+}
+
+.social-media>* {
+    display: inline;
+}
+
+.social-media-link:hover {
+    cursor: pointer;
+}
+
+@media(min-width:40rem) {
+    main {
+        background-image: url(assets/bg-pattern-1.svg);
+        background-repeat: no-repeat;
+        background-position: calc(100% + 2.25rem) -2.25rem;
+        background-size: auto 25rem;
+    }
+
     .hero {
-        margin-inline: 2.25rem;
+        padding-inline: 2.5rem;
+        padding-top: 3.875rem;
+        background-image: url(assets/bg-main-desktop.png);
+    }
+
+    .hero .logo {
+        margin-bottom: 6rem;
+    }
+
+    .hero .blurb {
+        max-width: 32.5rem;
     }
 
     .hero h1 {
@@ -256,15 +303,87 @@ footer .social-media {
         position: relative;
         margin-inline: auto;
         top: -6.125rem;
-        right: 10rem;
+        right: 22.5%;
         max-width: 270.21px;
     }
 
     section {
-        max-width: 25rem;
         margin-inline: auto;
-        left: 6rem;
+        left: 11.5%;
+        max-width: 25rem;
         top: -26rem;
         margin-bottom: -26rem;
     }
-} */
+
+    footer {
+        padding-inline: 2.5rem;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    footer p {
+        margin-bottom: 0rem;
+    }
+
+    footer .social-media {
+        justify-content: end;
+        align-items: center;
+    }
+}
+
+@media (min-width:60rem) {
+    main {
+        background-image: url("assets/bg-main-desktop.png"), url("assets/bg-pattern-1.svg");
+        background-repeat: no-repeat, no-repeat;
+        background-position: auto, 100% -2.25rem;
+        background-size: auto, auto 29.25rem;
+    }
+
+    .hero {
+        padding-inline: 10.25rem;
+        background-image: none;
+    }
+
+    .hero .blurb {
+        max-width: 62rem;
+    }
+
+    .hero .blurb h1 {
+        font-size: 5.5rem;
+        line-height: 5.5rem;
+        letter-spacing: -1px;
+    }
+
+    .hero .blurb p {
+        font-size: 1.25rem;
+        line-height: 2.125rem;
+    }
+
+    .demo {
+        margin-inline: 10.25rem;
+        background-size: 19.5rem auto;
+    }
+
+    .demo img {
+        right: 28%;
+    }
+
+    section {
+        left: 18%;
+    }
+
+    section h2 {
+        font-size: 2.5rem;
+        line-height: 3.25rem;
+    }
+
+    section p {
+        font-size: 1.25rem;
+        line-height: 2.125rem;
+    }
+
+    footer {
+        padding-inline: 10.25rem;
+        grid-template-columns: 1fr 0fr 1fr 1fr;
+
+    }
+}
